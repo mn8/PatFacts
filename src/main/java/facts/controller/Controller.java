@@ -19,7 +19,7 @@ public class Controller {
 	FactsDAO factsDAO;
 	
 	
-	@RequestMapping("/fact")
+	@RequestMapping("/fact/{id}")
 	@ResponseBody
 	public MappingJacksonValue getFact(@PathVariable int id, @RequestParam String callback){
 		Facts fact = factsDAO.findOne(id);
