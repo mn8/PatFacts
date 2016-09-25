@@ -3,9 +3,8 @@ package facts.repository;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.transaction.annotation.Transactional;
 
-import facts.dbo.Fact;
-
+import facts.dbo.Source;
 @Transactional
-public interface FactsDAO extends CrudRepository<Fact, Integer>{
+public interface SourcesDAO extends CrudRepository<Source, Integer> {
 
 }
