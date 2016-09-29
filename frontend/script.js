@@ -1,6 +1,6 @@
 $("#fact-list").empty();
 
-$.getJSON("test_resources/facts.json", null, function callback(facts){
+$.getJSON("http://localhost:8080/fact", null, function callback(facts){
     for (var i = 0; i < facts.length; i++){
         $("#fact-list").append(buildCard(facts[i].title, facts[i].date, facts[i].body, facts[i].sources));
     }

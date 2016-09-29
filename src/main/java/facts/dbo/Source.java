@@ -11,6 +11,7 @@ public class Source {
 	@Id
 	private int id;
 	private String source;
+	private String name;
 	public int getId() {
 		return id;
 	}
@@ -23,6 +24,12 @@ public class Source {
 	}
 	public void setSource(String source) {
 		this.source = source;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
 	}
 	
 	
