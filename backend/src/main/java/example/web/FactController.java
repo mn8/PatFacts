@@ -10,12 +10,14 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.CrossOrigin;
 
 import example.data.entity.Fact;
 import example.data.repository.FactRepository;
 
 @RestController
-@RequestMapping("/facts")
+@RequestMapping("facts")
+@CrossOrigin
 public class FactController {
 	@Autowired
 	FactRepository factsDAO;
