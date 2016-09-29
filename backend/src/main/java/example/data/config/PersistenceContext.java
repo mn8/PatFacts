@@ -25,7 +25,7 @@ import com.zaxxer.hikari.HikariDataSource;
 	"example.data.repository"
 })
 @EnableTransactionManagement
-@PropertySource("classpath:mysql.properties")
+@PropertySource("classpath:patfacts.properties")
 class PersistenceContext {
  
     @Bean(destroyMethod = "close")

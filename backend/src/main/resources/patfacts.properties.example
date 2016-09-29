@@ -1,8 +1,8 @@
 #Database Configuration
 db.driver=com.mysql.jdbc.Driver
-db.url=jdbc:mysql://localhost:3306/patfacts
-db.username=root
-db.password=kijkij-9050538
+db.url=jdbc:mysql://<url>:3306/patfacts
+db.username=patfacts
+db.password=<password>
  
 #Hibernate Configuration
 hibernate.dialect=org.hibernate.dialect.MySQL5InnoDBDialect

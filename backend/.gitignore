@@ -27,3 +27,6 @@ target/
 .metadata/
 .pydevproject
 /bin/
+
+# ignore properties file since it might have passwords in it
+patfacts.properties
