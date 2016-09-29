@@ -14,7 +14,7 @@ $.getJSON("http://ec2-52-90-84-9.compute-1.amazonaws.com:8080/backend/facts", nu
  */
 function buildCard(title, date, body, sources){
     return '<div class="card">' + 
-                '<div class="card-header">' + 
+                '<div class="card-header"  data-toggle="collapse" data-target="#'+date+'">' + 
                     '<h4 class="card-title">' + 
                         title + 
                     '</h4>' + 
@@ -22,14 +22,14 @@ function buildCard(title, date, body, sources){
                         date + 
                     '</h6>' + 
                 '</div>' + 
-                '<div class="card-block">' + 
+                '<div class="card-block collapse in" id='+date+'>' + 
                     '<p class="card-text">' + 
                         body + 
                     '</p>' + 
                     buildSourceLinks(sources) + 
                 '</div>' + 
             '</div>';
-}
+} 
 
 function buildSourceLinks(sources){
     var html = "";
