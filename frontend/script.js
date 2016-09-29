@@ -3,9 +3,20 @@
 $("#fact-list").empty();
 
 $.getJSON("http://ec2-52-90-84-9.compute-1.amazonaws.com:8080/backend/facts", null, function callback(facts){
-    for (var i = 0; i < facts.length; i++){
-        $("#fact-list").append(buildCard(facts[i].title, facts[i].date, facts[i].body, facts[i].sources));
-    }
+    console.log(typeof facts)
+    facts.map(function setDate(fact) {
+        fact.date = new Date(fact.date);
+        return fact;
+    }).sort(function compare(fact1, fact2){
+        return fact1.date - fact2.date;
+    }).forEach(function modifyHtml(fact){
+        $("#fact-list").prepend(buildCard(fact.title, fact.date, fact.body, fact.sources));
+    });
+    // for (var i = 0; i < facts.length; i++){
+    //     facts[i].date = new Date(facts[i].date);
+    //     console.log(facts[i].date.toDateString());
+    // }
+    console.log(JSON.stringify(facts));
 });
 
 
@@ -19,7 +30,7 @@ function buildCard(title, date, body, sources){
                         title + 
                     '</h4>' + 
                     '<h6 class="card-subtitle text-muted">' + 
-                        date + 
+                        date.toDateString() + 
                     '</h6>' + 
                 '</div>' + 
                 '<div class="card-block collapse in" id='+date+'>' + 
