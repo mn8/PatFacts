@@ -1,10 +1,12 @@
-package facts.repository;
+package example.data.repository;
 
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.transaction.annotation.Transactional;
 
-import facts.dbo.Source;
+import example.data.entity.Fact;
+
+
 @Transactional
-public interface SourcesDAO extends CrudRepository<Source, Integer> {
+public interface FactRepository extends CrudRepository<Fact, Integer>{
 
 }

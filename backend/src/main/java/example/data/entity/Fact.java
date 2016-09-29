@@ -1,5 +1,6 @@
-package facts.dbo;
+package example.data.entity;
 
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
 
@@ -20,7 +21,7 @@ public class Fact {
 	private int id;
 	private String title;
 	private String body; 
-	private Date date;
+	private LocalDate date;
 	@OneToMany(fetch = FetchType.EAGER)
 	@JoinColumn(name = "fact_fk")
 	private List<Source> sources;
@@ -38,7 +39,7 @@ public class Fact {
 	public String getBody() {
 		return body;
 	}
-	public Date getDate() { 
+	public LocalDate getDate() { 
 		return date;
 	}
 	public void setId(int id) {
@@ -47,7 +48,7 @@ public class Fact {
 	public void setBody(String body) { 
 		this.body = body;
 	}
-	public void setDate(Date date) {
+	public void setDate(LocalDate date) {
 		this.date = date;
 	}
 	public List<Source> getSources() {

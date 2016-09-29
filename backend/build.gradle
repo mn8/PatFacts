@@ -1,0 +1,57 @@
+// mainly copied from mkyong's gradle tutorial: http://www.mkyong.com/spring-mvc/gradle-spring-4-mvc-hello-world-example-annotation/
+
+apply plugin: 'java'
+apply plugin: 'war'
+apply plugin: 'org.akhikhl.gretty'
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+}
+
+dependencies {
+	// Stuff for web
+    compile 'ch.qos.logback:logback-classic:1.1.3'
+    compile 'org.springframework:spring-webmvc:4.3.0.RELEASE'
+    compile 'javax.servlet:jstl:1.2'
+    compile 'com.fasterxml.jackson.core:jackson-databind:2.7.3'
+    compile "com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.7.3" // java 8 date stuff
+    compile 'io.springfox:springfox-swagger2:2.4.0'
+    compile 'io.springfox:springfox-swagger-ui:2.4.0'
+    
+    // Stuff for data, if I ever want to refactor this into it's own module I can at least try to keep it separate
+    compile 'org.springframework.data:spring-data-jpa:1.10.2.RELEASE'
+    compile 'org.springframework:spring-aspects:4.3.0.RELEASE'
+	compile "mysql:mysql-connector-java:5.1.36"
+	compile "org.hibernate:hibernate-entitymanager:5.1.0.Final"
+	compile "org.hibernate:hibernate-java8:5.1.0.Final"
+	compile "com.zaxxer:HikariCP:2.4.6"
+	compile "com.h2database:h2:1.4.192"
+	
+//	compile "org.jadira.usertype:usertype.extended:3.2.0.GA"
+	
+    //include in compile only, exclude in the war
+    providedCompile 'javax.servlet:servlet-api:2.5'
+}
+
+//Gretty Embedded Jetty
+buildscript {
+  repositories {
+    jcenter()
+  }
+
+  dependencies {
+    classpath 'org.akhikhl.gretty:gretty:+'
+  }
+}
+
+// Don't use Jetty8, even it's a servlet 3.0+ container, 
+// but not support non-jar WebApplicationInitializer scanning.
+// It will cause "No Spring WebApplicationInitializer types detected on classpath"
+gretty {
+  port = 8080
+  servletContainer = 'jetty9' //tomcat7 or tomcat8
+}

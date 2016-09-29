@@ -1,4 +1,4 @@
-package facts.controller;
+package example.web;
 
 import java.util.List;
 
@@ -11,14 +11,14 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import facts.dbo.Fact;
-import facts.repository.FactsDAO;
+import example.data.entity.Fact;
+import example.data.repository.FactRepository;
 
 @RestController
-@RequestMapping("/fact")
-public class Controller {
+@RequestMapping("/facts")
+public class FactController {
 	@Autowired
-	FactsDAO factsDAO;
+	FactRepository factsDAO;
 	
 	
 	@RequestMapping(value = "/{id}", method = RequestMethod.GET)
