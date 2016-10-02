@@ -2,7 +2,7 @@
 
 $("#fact-list").empty();
 
-$.getJSON("http://ec2-52-90-84-9.compute-1.amazonaws.com:8080/backend/facts", null, function callback(facts){
+$.getJSON("http://ec2-52-55-8-54.compute-1.amazonaws.com:8080/backend/facts", null, function callback(facts){
     console.log(typeof facts)
     facts.map(function setDate(fact) {
         fact.date = new Date(fact.date);
