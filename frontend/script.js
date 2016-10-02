@@ -25,7 +25,7 @@ $.getJSON("http://ec2-52-55-8-54.compute-1.amazonaws.com:8080/backend/facts", nu
  */
 function buildCard(title, date, body, sources){
     return '<div class="card">' + 
-                '<div class="card-header"  data-toggle="collapse" data-target="#'+date+'">' + 
+                '<div class="card-header"  data-toggle="collapse" data-target="#'+date.getTime()+'">' + 
                     '<h4 class="card-title">' + 
                         title + 
                     '</h4>' + 
@@ -33,7 +33,7 @@ function buildCard(title, date, body, sources){
                         date.toDateString() + 
                     '</h6>' + 
                 '</div>' + 
-                '<div class="card-block collapse in" id='+date+'>' + 
+                '<div class="card-block collapse in" id="'+date.getTime()+'">' + 
                     '<p class="card-text">' + 
                         body + 
                     '</p>' + 
