@@ -10,3 +10,7 @@ hibernate.hbm2ddl.auto=validate
 hibernate.ejb.naming_strategy=org.hibernate.cfg.ImprovedNamingStrategy
 hibernate.show_sql=false
 hibernate.format_sql=true
+
+#Other Properties
+users.user=password123
+users.admin=password456

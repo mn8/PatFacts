@@ -10,7 +10,7 @@ class BasicController {
 	
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public String showIndex() {
-        return "The server is running!  View the Swagger page <a href=\"swagger-ui.html\">here</a>.";
+        return "The server is running!";
     }
 
     @PreAuthorize("isAuthenticated()")
