@@ -12,15 +12,9 @@ class BasicController {
         return "The server is running!  View the Swagger page <a href=\"swagger-ui.html\">here</a>.";
     }
 
-//    @RequestMapping(value = "/test", method = RequestMethod.GET)
-//    public Iterable<DiscussionEntity> test() {
-//    	return repository.findAll();
-////    	return null;
-//    }
-//
-//    @RequestMapping(value = "/test", method = RequestMethod.POST)
-//    public DiscussionEntity testInsert() {
-//    	return repository.save(new DiscussionEntity("desc", "title"));
-//    }
-//    
+   @RequestMapping(value = "/admin", method = RequestMethod.GET)
+   public String test() {
+       return "this endpoint is secured";
+   }
+
 }
