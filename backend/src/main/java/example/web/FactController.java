@@ -47,8 +47,10 @@ public class FactController {
 	}
 	@RequestMapping(method = RequestMethod.POST)
 	public Fact createFact(@RequestBody Fact fact){
+		//fact.getSources().get(0).setId(1);
 		System.out.println("Fact To Save"+fact.toString());
-		factsDAO.save(fact);
+		factService.createFact(fact);
+		/*factsDAO.save(fact);*/
 		//return factService.createFact(fact);
 		return fact;
 	}

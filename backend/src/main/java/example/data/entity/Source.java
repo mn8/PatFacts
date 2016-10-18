@@ -16,6 +16,8 @@ public class Source {
 	private int id;
 	private String source;
 	private String name;
+	private int fact_fk;
+	
 	public Source(){
 		
 	}
@@ -23,16 +25,16 @@ public class Source {
 		this.source = source; 
 		this.name = name;
 	}
-	public int getId() {
+/*	public int getId() {
 		return id;
-	}
+	}*/
 	public String getSource() {
 		return source;
 	}
-	@JsonIgnore
+/*	@JsonIgnore
 	public void setId(int id) {
 		this.id = id;
-	}
+	}*/
 	public void setSource(String source) {
 		this.source = source;
 	}
@@ -42,11 +44,19 @@ public class Source {
 	public void setName(String name) {
 		this.name = name;
 	}
-	
+
+	public int getFact_fk() {
+		return fact_fk;
+	}
+	public void setFact_fk(int fact_fk) {
+		this.fact_fk = fact_fk;
+	}
 	public SourceModel toModel(){
 		return new SourceModel(this.source, this.name);
 	}
-	
+	public String toString(){
+		return "Source{ id: "+id + "source" + source + " name " + name + " }";
+	}
 	
 
 }

@@ -69,7 +69,7 @@ public class Fact {
 	}
 	@Override
 	public String toString(){
-		return "id:"+id+" Title: "+title+" Body:"+body+" Date: "+date;
+		return "id:"+id+" Title: "+title+" Body:"+body+" Date: "+date +" Sources " + sources.toString(); 
 	}
 
 	public FactModel toModel(){
