@@ -1,6 +1,7 @@
 package example.service;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,16 +28,20 @@ public class FactService {
 		sourcesRepository.save(fact.getSources());
 		/*return factRepository.save(fact);*/
 	}
-	public void readFact(){
-		
+	public Iterable<Fact> readFacts(){
+		return factRepository.findAll();
 	}
-	public void updateFact(){
-		
+	public Fact updateFact(int id, Fact fact){
+		Fact toEdit = factRepository.findOne(id);
+		toEdit.setBody(fact.getBody());
+		toEdit.setDate(fact.getDate());
+		toEdit.setSources(fact.getSources());
+		toEdit.setTitle(fact.getTitle());
+		return factRepository.save(toEdit);
 	}
 	public void deleteFact(int id){
-		
+		factRepository.delete(id);
 	}
 
-	
-	
+
 }

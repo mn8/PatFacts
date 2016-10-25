@@ -30,23 +30,26 @@ public class FactController {
 	FactRepository factsDAO;
 	@Autowired 
 	FactService factService;
-/*	@Autowired 
-	SourceService sourceService;*/
-	
+
 	@RequestMapping(value = "/{id}", method = RequestMethod.GET)
 	public Fact getFact(@PathVariable int id, @RequestParam String callback){
-		Fact fact = factsDAO.findOne(id);
-		return fact;
+		return factsDAO.findOne(id);
 	}
 	@RequestMapping(method = RequestMethod.GET)
 	public Iterable<Fact> getFacts(){
-		return factsDAO.findAll();
-
+		return factService.readFacts();
 	}
 	@RequestMapping(method = RequestMethod.POST)
 	public Fact createFact(@RequestBody Fact fact){
-		System.out.println("Fact To Save"+fact.toString());
 		factService.createFact(fact);
 		return fact;
+	}
+	@RequestMapping(method = RequestMethod.PUT)
+	public Fact editFact(@RequestParam int id, @RequestBody Fact fact){
+		return factService.updateFact(id, fact);
+	}
+	@RequestMapping(method = RequestMethod.DELETE)
+	public void deleteFact(@RequestParam int id){
+		factService.deleteFact(id);
 	}
 }
