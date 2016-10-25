@@ -67,7 +67,7 @@ function buildSourceLinks(sources) {
     var html = "";
     for (var i = 0; i < sources.length; i++) {
         html += '<a href="' +
-            sources[i].url +
+            sources[i].source +
             '" class="card-link">' +
             sources[i].name +
             '</a>';
