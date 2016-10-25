@@ -34,11 +34,9 @@ public class FactController {
 	SourceService sourceService;*/
 	
 	@RequestMapping(value = "/{id}", method = RequestMethod.GET)
-	public MappingJacksonValue getFact(@PathVariable int id, @RequestParam String callback){
+	public Fact getFact(@PathVariable int id, @RequestParam String callback){
 		Fact fact = factsDAO.findOne(id);
-		MappingJacksonValue jsonpResponse = new MappingJacksonValue(fact);
-		jsonpResponse.setJsonpFunction(callback);
-		return jsonpResponse;
+		return fact;
 	}
 	@RequestMapping(method = RequestMethod.GET)
 	public Iterable<Fact> getFacts(){
@@ -47,11 +45,8 @@ public class FactController {
 	}
 	@RequestMapping(method = RequestMethod.POST)
 	public Fact createFact(@RequestBody Fact fact){
-		//fact.getSources().get(0).setId(1);
 		System.out.println("Fact To Save"+fact.toString());
 		factService.createFact(fact);
-		/*factsDAO.save(fact);*/
-		//return factService.createFact(fact);
 		return fact;
 	}
 }

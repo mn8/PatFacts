@@ -19,12 +19,12 @@ public class FactService {
 	FactRepository factRepository;
 	@Autowired SourcesRepository sourcesRepository;
 	
-	public void createFact(Fact factModel){
+	public void createFact(Fact fact){
 
-		Fact factToSave = new Fact(factModel.getTitle(), factModel.getBody(), factModel.getDate());
+		Fact factToSave = new Fact(fact.getTitle(), fact.getBody(), fact.getDate());
 		int fk = factRepository.save(factToSave).getId();
-		factModel.getSources().forEach(source->source.setFact_fk(fk));
-		sourcesRepository.save(factModel.getSources());
+		fact.getSources().forEach(source->source.setFact_fk(fk));
+		sourcesRepository.save(fact.getSources());
 		/*return factRepository.save(fact);*/
 	}
 	public void readFact(){
