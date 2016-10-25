@@ -1,26 +1,18 @@
 package example.web;
 
-import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.converter.json.MappingJacksonValue;
-import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.CrossOrigin;
 
-import example.data.entity.Fact;
-import example.data.entity.Source;
-import example.data.repository.FactRepository;
-import example.model.FactModel;
-import example.model.SourceModel;
+import example.data.entity.Fact;;
 import example.service.FactService;
-import example.service.SourceService;
+
 
 @RestController
 @RequestMapping("facts")

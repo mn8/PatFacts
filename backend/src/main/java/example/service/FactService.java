@@ -8,10 +8,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import example.data.entity.Fact;
-import example.data.entity.Source;
 import example.data.repository.FactRepository;
 import example.data.repository.SourcesRepository;
-import example.model.FactModel;
+
 
 @Service
 public class FactService {
