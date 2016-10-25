@@ -22,7 +22,7 @@ public class FactController {
 	FactService factService;
 
 	@RequestMapping(value = "/{id}", method = RequestMethod.GET)
-	public Fact getFact(@PathVariable int id, @RequestParam String callback){
+	public Fact getFact(@PathVariable int id){
 		return factService.readFact(id);
 	}
 	@RequestMapping(method = RequestMethod.GET)
