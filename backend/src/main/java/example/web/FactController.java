@@ -26,14 +26,12 @@ import example.service.SourceService;
 @RequestMapping("facts")
 @CrossOrigin
 public class FactController {
-	@Autowired
-	FactRepository factsDAO;
 	@Autowired 
 	FactService factService;
 
 	@RequestMapping(value = "/{id}", method = RequestMethod.GET)
 	public Fact getFact(@PathVariable int id, @RequestParam String callback){
-		return factsDAO.findOne(id);
+		return factService.readFact(id);
 	}
 	@RequestMapping(method = RequestMethod.GET)
 	public Iterable<Fact> getFacts(){

@@ -28,6 +28,9 @@ public class FactService {
 		sourcesRepository.save(fact.getSources());
 		/*return factRepository.save(fact);*/
 	}
+	public Fact readFact(int id){
+		return factRepository.findOne(id);
+	}
 	public Iterable<Fact> readFacts(){
 		return factRepository.findAll();
 	}
