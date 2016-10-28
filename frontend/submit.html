@@ -1,24 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
-    <meta charset="utf-8">
+ <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">
+	
+	<title>Submit A Fact</title>
 
-    <title>Pat Facts</title>
-
-    <!-- Bootstrap core CSS -->
+	    <!-- Bootstrap core CSS -->
     <link href="vendor/css/bootstrap.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
     <link href="styles.css" rel="stylesheet">
 </head>
-
 <body>
 
     <nav class="navbar navbar-fixed-top navbar-dark bg-inverse">
@@ -47,23 +45,34 @@
         <div class="starter-template">
             <h1 class="display-1">Pat Facts</h1>
             <p class="lead">One fact a day from your very own Pat.</p>
-        </div>
-        <h1>About Pat</h1>
-        <p>
-            Patrick Coady combines his enthusiasm, eccentricity, and breadth of knowledge to bring you a new fact every work day.  
-            While not coming up with facts, he spends his free time playing Rocket League and playing with VR.  A software developer
-            by day, Pat is sure to keep you both enlightened and entertained at the same time.
-        </p>
-        <h1>About the site</h1>
-        <p>
-            PatFacts is a specialized microblogging platform designed to deliver one fact a day to its userbase.  It is developed 
-            and designed from the ground up by Patrick Coady and Joe DiFebo, allowing for a maximum level of customization for both Pat
-            and its users.  Development on the site is ongoing to constantly push the boundaries of fact-spreading and knowledge-sharing to as
-            many people as possible.  The site was established in September 2016.
-        </p>
-
+       
+      		<h1>Submit A Fact</h1>
+      		<p>
+   				Do you have a fact that's just lying around, collecting dust? <br>
+   				Why not turn your old fact into a new Pat Fact! <br>
+   				I will take your fact and pretend that it's my fact! Go plagiarism! 
+    		</p>
+    		<p class = "fine-print">*All Facts submited to facts are now Pat's Facts and are subject to change. Terms and Conditions may apply</p>
+    	</div>
+    	<div>
+    	<!-- action="destination.html" -->
+			<form id="add-fact" class="form" >
+				<label>Title</label>
+				<br>
+				<input type="text" name ="title">
+				<br>
+				<label>Fact</label>
+				<br>
+				<textarea name= "fact" cols="50" rows="10"></textarea>
+				<br>
+				<label>Sources</label>
+				<br>
+				<input type="text" name="sources">
+				 <input type="submit" value="Add Fact">
+			</form>
+    	</div>
     </div>
-    <!-- /.container -->
+
 
 
     <!-- Bootstrap core JavaScript
@@ -75,9 +84,11 @@
     <script src="vendor/js/bootstrap.min.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="vendor/js/ie10-viewport-bug-workaround.js"></script>
+    <!-- JQuery plugin to convert form to json -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.js"></script> 
+    <script src="http://malsup.github.com/jquery.form.js"></script> 
 
 
     <script src="script.js"></script>
 </body>
-
 </html>

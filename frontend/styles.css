@@ -2,6 +2,12 @@
   padding: 3rem 1.5rem;
   text-align: center;
 }
+.fine-print{
+	font-size: xx-small;
+}
+.form{
+	 padding: 3rem 1.5rem;
+}
 
 /*.container {
     max-width: 900px;

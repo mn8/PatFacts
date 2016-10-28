@@ -20,12 +20,11 @@ public class FactService {
 	@Autowired SourcesRepository sourcesRepository;
 	
 	public void createFact(Fact fact){
-
+		//Need cleaning
 		Fact factToSave = new Fact(fact.getTitle(), fact.getBody(), fact.getDate());
 		int fk = factRepository.save(factToSave).getId();
 		fact.getSources().forEach(source->source.setFact_fk(fk));
 		sourcesRepository.save(fact.getSources());
-		/*return factRepository.save(fact);*/
 	}
 	public Fact readFact(int id){
 		return factRepository.findOne(id);
@@ -39,6 +38,7 @@ public class FactService {
 		toEdit.setDate(fact.getDate());
 		toEdit.setSources(fact.getSources());
 		toEdit.setTitle(fact.getTitle());
+
 		return factRepository.save(toEdit);
 	}
 	public void deleteFact(int id){

@@ -30,9 +30,9 @@ public class FactController {
 		return factService.readFacts();
 	}
 	@RequestMapping(method = RequestMethod.POST)
-	public Fact createFact(@RequestBody Fact fact){
+	public void createFact(@RequestBody Fact fact){
 		factService.createFact(fact);
-		return fact;
+		//return fact;
 	}
 	@RequestMapping(method = RequestMethod.PUT)
 	public Fact editFact(@RequestParam int id, @RequestBody Fact fact){
